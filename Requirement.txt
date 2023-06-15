@@ -1,0 +1,6 @@
+Instalar:
+Django==4.2.1
+
+Ejecutar servidor: 
+    Dentro de la carpeta ajax, en la terminal, colocar: python3 manage.py runserver.
+    Esto levanta el servidor local.
