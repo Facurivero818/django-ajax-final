@@ -1,6 +1,5 @@
 const formulario = document.querySelector(".formulario");
 
-
 // CREO EL TOKEN CSRFTOKEN DE MANERA CAMPERA SIN USAR LIBRERIA
 function getCookie(name) {
     let cookieValue = null;
@@ -44,6 +43,11 @@ formulario.addEventListener("submit",async function(e){
     respuesta.textContent = resp["respuesta"];
 
 });
+
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
 
 
 
