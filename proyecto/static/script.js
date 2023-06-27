@@ -25,9 +25,9 @@ formulario.addEventListener("submit",async function(e){
     const datosFormulario = new FormData(formulario);
     const objetoFormulario = {};
 
-     for (let [clave, valor] of datosFormulario.entries()) {
-         objetoFormulario[clave] = valor;
-     }
+    for (let [clave, valor] of datosFormulario.entries()){
+        objetoFormulario[clave] = valor;
+    }
 
     const jsonFormulario = JSON.stringify(objetoFormulario);
     
@@ -35,18 +35,14 @@ formulario.addEventListener("submit",async function(e){
         method:"POST",
         body:jsonFormulario,
         headers: {'X-CSRFToken': csrftoken,
-            // 'Content-Type': 'multipart/form-data'
-          }}); 
+        }}); 
     let resp = await peticion.json();
-    console.log(resp);
     const respuesta = document.getElementById("resp");
     respuesta.textContent = resp["respuesta"];
 
 });
 
 
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
 
 
 
