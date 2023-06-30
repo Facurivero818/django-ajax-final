@@ -17,7 +17,7 @@ def calculo(request):
         var = var.replace(" ","")
         largo= len(var)
 
-        if var[largo-1] == ";" and not any(digito.isalpha() for digito in var) and not any(var[i-1].isdigit() == var[i].isdigit() for i in range(1, largo-1)) and var[0]!= "-" and var[-2].isdigit() and not any(map(lambda x: x in var, ["(",")"])):
+        if var[largo-1] == ";" and (";" not in var[:-1]) and not any(digito.isalpha() for digito in var) and not any(var[i-1].isdigit() == var[i].isdigit() for i in range(1, largo-1)) and var[0]!= "-" and var[-2].isdigit() and not any(map(lambda x: x in var, ["(",")"])):
         # SI HAY UN ; FINAL Y NO HAY LETRAS Y NO HAY 2 DIGITOS JUNTOS Y NO HAY UN SIGNO NEGATIVO EN LA PRIMERA POSICION (NUMERO NEGATIVO) Y EL ANTEULTIMO CARATER NO SEA UN OPERADOR Y NO HAY PARENTESIS    
             var = var[:-1]
             try:
